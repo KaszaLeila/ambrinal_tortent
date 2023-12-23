@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hang Érzelem Felismerés</title>
+</head>
+<body>
+    <h1>Hang Érzelem Felismerés</h1>
+    <form action="/record" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".wav">
+        <button type="submit">Feltöltés és Felismerés</button>
+    </form>
+    {% if result %}
+        <h2>Eredmény: {{ result }}</h2>
+    {% endif %}
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
